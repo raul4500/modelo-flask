@@ -1,0 +1,48 @@
+body{
+    background-color: #7a7a7a;
+    margin-top: 50px;
+    padding: 0%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+form{
+    height: 80lvh;
+    justify-items: center;
+}
+
+table{
+    position: relative;
+    top: 50px;
+    color: aliceblue;
+    background-color: rgb(10, 10, 10);
+    border-radius: 6px;
+}
+
+table th{
+    background-color: rgb(53, 53, 53);
+    padding: 20px;
+    border-radius: 5px;
+    margin: 0%;
+}
+
+table td{
+    height: 40px;
+    padding: 10px;
+}
+
+a{
+    padding: 20px;
+    background-color: red;
+    height: auto;
+    width: auto;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+button{
+    padding: 20px;
+    height: auto;
+    border-radius: 5px;
+}

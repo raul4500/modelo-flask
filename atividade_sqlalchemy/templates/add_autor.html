@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <title>Document</title>
+</head>
+<body>
+    <form action="{{ url }}" method="post" style="margin: 20px;">
+
+        <input type="text" name="nome" id="nome" placeholder="nome" required><br>
+        <input type="date" name="data_nascimento" id="data_nascimento" placeholder="data_nascimento" required><br>
+        <input type="text" name="nacionalidade" id="nacionalidade" placeholder="nacionalidade" required><br>
+        <input type="text" name="categoria" id="categoria" placeholder="categoria" required><br>
+        <button type="submit">enviar</button>
+        {% if editar != True %}
+        <table>
+            <tr>
+                <th>Nome</th>
+                <th>data_nascimento</th>
+                <th>nacionalidade</th>
+            </tr>
+            {% for autor in autores %}
+            <tr>
+                <td>{{ autor.nome_autor }}</td>
+                <td>{{ autor.data_nascimento }}</td>
+                <td>{{ autor.nacionalidade }}</td>
+                <td><a href='/deletar/autor/{{ autor.id }}'>excluir</td>
+                <td><a href='/editar/autor/{{ autor.id }}'>editar</td>
+                </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
+        
+
+    
+    </form>
+    <a href="/livros" style="margin: 20px;">Voltar</a>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <title>Document</title>
+</head>
+
+<body>
+    <form action='/livros' , method=''>
+        
+        <div id="botoes">
+            <a href='/add_autor'>Adicionar Autor</a>
+            <a href='/add_livro'>Adicionar Livro</a>
+        </div>
+        
+        <table>
+            <tr>
+                <th>Titulo</th>
+                <th>ISBN</th>
+                <th>Data</th>
+                <th>Paginas</th>
+                <th>Autor</th>
+                <th>categoria</th>
+            </tr>
+            {% for livro in livros %}
+            <tr>
+                <td>{{ livro.titulo }}</td>
+                <td>{{ livro.isbn }}</td>
+                <td>{{ livro.datap }}</td>
+                <td>{{ livro.paginas }}</td>
+                <td>{{ livro.autor }}</td>
+                <td>{{ livro.categoria }}</td>
+                <td><a href='/deletar/livro/{{ livro.id }}'>excluir</td>
+                <td><a href='/editar/livro/{{ livro.id }}'>editar</td>
+            </tr>
+            {% endfor %}
+
+        </table>
+        
+
+</body>
+
+</html>
